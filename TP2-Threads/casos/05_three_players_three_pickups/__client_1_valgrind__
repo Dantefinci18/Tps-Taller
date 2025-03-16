@@ -1,0 +1,94 @@
+==00:00:00:00.000 132915== Memcheck, a memory error detector
+==00:00:00:00.000 132915== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==00:00:00:00.000 132915== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==00:00:00:00.000 132915== Command: ./client 127.0.0.1 1502
+==00:00:00:00.000 132915== Parent PID: 132911
+==00:00:00:00.000 132915== 
+==00:00:00:52.197 132915== 
+==00:00:00:52.197 132915== Process terminating with default action of signal 13 (SIGPIPE)
+==00:00:00:52.197 132915==    at 0x4BCB887: write (write.c:26)
+==00:00:00:52.197 132915==    by 0x4B41EEC: _IO_file_write@@GLIBC_2.2.5 (fileops.c:1180)
+==00:00:00:52.197 132915==    by 0x4B427CF: new_do_write (fileops.c:448)
+==00:00:00:52.197 132915==    by 0x4B427CF: _IO_new_file_xsputn (fileops.c:1254)
+==00:00:00:52.197 132915==    by 0x4B427CF: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+==00:00:00:52.197 132915==    by 0x4B36FD6: fwrite (iofwrite.c:39)
+==00:00:00:52.197 132915==    by 0x49A7B64: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==00:00:00:52.197 132915==    by 0x49A7EBA: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==00:00:00:52.197 132915==    by 0x10D44F: Cliente::run() (client_cliente.cpp:37)
+==00:00:00:52.197 132915==    by 0x10DCF2: main (client_main.cpp:22)
+==00:00:00:52.197 132915== 
+==00:00:00:52.197 132915== FILE DESCRIPTORS: 10 open (3 std) at exit.
+==00:00:00:52.197 132915== Open AF_INET socket 4: 127.0.0.1:34992 <-> 127.0.0.1:1502
+==00:00:00:52.197 132915==    at 0x4BDEB3B: socket (syscall-template.S:120)
+==00:00:00:52.197 132915==    by 0x10C7CB: Socket::Socket(char const*, char const*) (common_socket.cpp:47)
+==00:00:00:52.197 132915==    by 0x10D271: Cliente::Cliente(char const*, char const*) (client_cliente.cpp:15)
+==00:00:00:52.197 132915==    by 0x10DCE6: main (client_main.cpp:21)
+==00:00:00:52.197 132915== 
+==00:00:00:52.197 132915== Open file descriptor 103: /snap/code/171/usr/share/code/v8_context_snapshot.bin
+==00:00:00:52.197 132915==    <inherited from parent>
+==00:00:00:52.197 132915== 
+==00:00:00:52.197 132915== Open file descriptor 63:
+==00:00:00:52.197 132915==    <inherited from parent>
+==00:00:00:52.197 132915== 
+==00:00:00:52.197 132915== Open AF_UNIX socket 43: <unknown>
+==00:00:00:52.197 132915==    <inherited from parent>
+==00:00:00:52.197 132915== 
+==00:00:00:52.197 132915== Open file descriptor 42: /home/dante/.config/Code/logs/20241010T121334/ptyhost.log
+==00:00:00:52.197 132915==    <inherited from parent>
+==00:00:00:52.197 132915== 
+==00:00:00:52.197 132915== Open file descriptor 10: /home/dante/Taller/TP2-Threads/casos/05_three_players_three_pickups/__client_0_pipe__
+==00:00:00:52.197 132915==    <inherited from parent>
+==00:00:00:52.197 132915== 
+==00:00:00:52.197 132915== Open file descriptor 3: /home/dante/Taller/TP2-Threads/casos/05_three_players_three_pickups/__client_1_valgrind__
+==00:00:00:52.197 132915==    <inherited from parent>
+==00:00:00:52.197 132915== 
+==00:00:00:52.197 132915== 
+==00:00:00:52.197 132915== HEAP SUMMARY:
+==00:00:00:52.197 132915==     in use at exit: 80,896 bytes in 3 blocks
+==00:00:00:52.198 132915==   total heap usage: 4 allocs, 1 frees, 80,960 bytes allocated
+==00:00:00:52.198 132915== 
+==00:00:00:52.199 132915== 4,096 bytes in 1 blocks are still reachable in loss record 1 of 3
+==00:00:00:52.199 132915==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==00:00:00:52.199 132915==    by 0x4B35BA3: _IO_file_doallocate (filedoalloc.c:101)
+==00:00:00:52.199 132915==    by 0x4B44CDF: _IO_doallocbuf (genops.c:347)
+==00:00:00:52.199 132915==    by 0x4B43F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+==00:00:00:52.199 132915==    by 0x4B426D4: _IO_new_file_xsputn (fileops.c:1243)
+==00:00:00:52.199 132915==    by 0x4B426D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+==00:00:00:52.199 132915==    by 0x4B36FD6: fwrite (iofwrite.c:39)
+==00:00:00:52.199 132915==    by 0x49A7B64: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==00:00:00:52.199 132915==    by 0x49A7EBA: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==00:00:00:52.199 132915==    by 0x10D2F6: Cliente::run() (client_cliente.cpp:18)
+==00:00:00:52.199 132915==    by 0x10DCF2: main (client_main.cpp:22)
+==00:00:00:52.199 132915== 
+==00:00:00:52.199 132915== 4,096 bytes in 1 blocks are still reachable in loss record 2 of 3
+==00:00:00:52.199 132915==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==00:00:00:52.199 132915==    by 0x4B35BA3: _IO_file_doallocate (filedoalloc.c:101)
+==00:00:00:52.199 132915==    by 0x4B44CDF: _IO_doallocbuf (genops.c:347)
+==00:00:00:52.199 132915==    by 0x4B43CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+==00:00:00:52.199 132915==    by 0x4B44D95: _IO_default_uflow (genops.c:362)
+==00:00:00:52.199 132915==    by 0x497D8C0: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==00:00:00:52.199 132915==    by 0x49337E9: std::basic_istream<char, std::char_traits<char> >& std::getline<char, std::char_traits<char>, std::allocator<char> >(std::basic_istream<char, std::char_traits<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, char) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==00:00:00:52.199 132915==    by 0x10D32A: Cliente::run() (client_cliente.cpp:20)
+==00:00:00:52.199 132915==    by 0x10DCF2: main (client_main.cpp:22)
+==00:00:00:52.199 132915== 
+==00:00:00:52.199 132915== 72,704 bytes in 1 blocks are still reachable in loss record 3 of 3
+==00:00:00:52.199 132915==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==00:00:00:52.199 132915==    by 0x4915939: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+==00:00:00:52.199 132915==    by 0x400647D: call_init.part.0 (dl-init.c:70)
+==00:00:00:52.199 132915==    by 0x4006567: call_init (dl-init.c:33)
+==00:00:00:52.199 132915==    by 0x4006567: _dl_init (dl-init.c:117)
+==00:00:00:52.199 132915==    by 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+==00:00:00:52.199 132915==    by 0x2: ???
+==00:00:00:52.199 132915==    by 0x1FFEFFFBF6: ???
+==00:00:00:52.199 132915==    by 0x1FFEFFFBFF: ???
+==00:00:00:52.199 132915==    by 0x1FFEFFFC09: ???
+==00:00:00:52.199 132915== 
+==00:00:00:52.199 132915== LEAK SUMMARY:
+==00:00:00:52.199 132915==    definitely lost: 0 bytes in 0 blocks
+==00:00:00:52.199 132915==    indirectly lost: 0 bytes in 0 blocks
+==00:00:00:52.199 132915==      possibly lost: 0 bytes in 0 blocks
+==00:00:00:52.199 132915==    still reachable: 80,896 bytes in 3 blocks
+==00:00:00:52.199 132915==         suppressed: 0 bytes in 0 blocks
+==00:00:00:52.199 132915== 
+==00:00:00:52.199 132915== For lists of detected and suppressed errors, rerun with: -s
+==00:00:00:52.199 132915== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

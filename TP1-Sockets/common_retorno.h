@@ -1,0 +1,7 @@
+#ifndef CODIGOS_DE_RETORNO_H
+#define CONCODIGOS_DE_RETORNO_H
+
+#define ERROR 1
+#define EXITO 0
+
+#endif  // CODIGOS_DE_RETORNO_H
